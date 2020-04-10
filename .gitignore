@@ -1,6 +1,8 @@
 .vagrant/
 vendor/
+!vendor/smartadmin/*
 config/development.config.php
+config/autoload/local.php
 data/cache/*
 !data/cache/.gitkeep
 phpunit.xml
