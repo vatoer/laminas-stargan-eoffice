@@ -1,6 +1,6 @@
 .vagrant/
-vendor/
-!vendor/smartadmin/*
+/vendor/
+!vendor/smartadmin
 config/development.config.php
 config/autoload/local.php
 data/cache/*
