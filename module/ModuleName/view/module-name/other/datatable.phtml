@@ -1,0 +1,92 @@
+                        
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div id="panel-1" class="panel">
+                                    <div class="panel-hdr">
+                                        <h2>
+                                            Example <span class="fw-300"><i>Table</i></span>
+                                        </h2>
+                                        <div class="panel-toolbar">
+                                            <button class="btn btn-panel" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>
+                                            <button class="btn btn-panel" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
+                                            <button class="btn btn-panel" data-action="panel-close" data-toggle="tooltip" data-offset="0,10" data-original-title="Close"></button>
+                                        </div>
+                                    </div>
+                                    <div class="panel-container show">
+                                        <div class="panel-content">
+                                            <!-- datatable start -->
+                                            <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100 display responsive ">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Dari</th>
+                                                        <th>Perihal</th>
+                                                        <th>Nomor Surat</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th>Dari</th>
+                                                        <th>Perihal</th>
+                                                        <th>Nomor Surat</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                            <!-- datatable end -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<?php 
+
+//https://quote-garden.herokuapp.com/quotes/search/life datasource contoh
+
+$this->inlineScript()->captureStart();
+echo <<<JS
+    $(document).ready(function()
+            {
+                console.log("CEKCUK");
+                // initialize datatable
+                $('#dt-basic-example').dataTable(
+                {
+                    ajax: {
+                        "url": "https://quote-garden.herokuapp.com/quotes/search/life",
+                        "dataSrc": "results"
+                    },
+                    columns: [
+                        
+                        { data: "quoteAuthor" , responsivePriority: 500 },
+                        { data: "quoteText" , responsivePriority: 1 },
+                        { data: "_id",responsivePriority: 1000 }
+                    ],
+
+                    responsive:
+                    {
+                        details:
+                        {
+                            display: $.fn.dataTable.Responsive.display.modal(
+                            {
+                                header: function(row)
+                                {
+                                    var data = row.data();
+                                    return 'Details for ' + data[0] + ' ' + data[1];
+                                }
+                            }),
+                            renderer: $.fn.dataTable.Responsive.renderer.tableAll(
+                            {
+                                tableClass: 'table table-responsive'
+                            })
+                        }
+                    },
+                    columnDefs: [
+                    ],
+                });
+            });
+JS;
+$this->inlineScript()->captureEnd();
+
+?>
