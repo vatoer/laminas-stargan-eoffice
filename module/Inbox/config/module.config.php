@@ -47,12 +47,25 @@ return [
                         ],
                     ],
                     // child with  diffirent controller
-                    'other' => [
+                    'surat' => [
                         'type' => \Laminas\Router\Http\Segment::class,
                         'options' => [
-                            'route'    => '/other[/:action[/:a[/:b[/:c]]]]',
+                            'route'    => '/surat[/:action[/:a[/:b[/:c]]]]',
                             'defaults' => [
-                                'controller' => Controller\OtherController::class,
+                                'controller' => Controller\SuratController::class,
+                                'action' => 'index',
+                            ],
+                            'constraints' => [
+                                'a' => '\d{4}',
+                            ],
+                        ],
+                    ],
+                    'disposisi' => [
+                        'type' => \Laminas\Router\Http\Segment::class,
+                        'options' => [
+                            'route'    => '/disposisi[/:action[/:a[/:b[/:c]]]]',
+                            'defaults' => [
+                                'controller' => Controller\DisposisiController::class,
                                 'action' => 'index',
                             ],
                             'constraints' => [
@@ -68,7 +81,8 @@ return [
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
-            Controller\OtherController::class => InvokableFactory::class,
+            Controller\SuratController::class => InvokableFactory::class,
+            Controller\DisposisiController::class => InvokableFactory::class,
         ],
         'aliases' => [
             //

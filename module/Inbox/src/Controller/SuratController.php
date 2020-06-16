@@ -13,37 +13,33 @@ namespace Inbox\Controller;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;
 
-class OtherController extends AbstractActionController
+class SuratController extends AbstractActionController
 {
     public function indexAction()
     {
         return new ViewModel();
     }
 
-    public function datatableAction()
+
+    public function quickPreviewAction()
     {
         return new ViewModel();
     }
 
-    public function datatableQuickPreviewAction()
+    public function newAction()
     {
         return new ViewModel();
     }
 
-    public function formAction()
+    public function forwardAction()
     {
         return new ViewModel();
     }
 
-    public function naskahDinasAction()
+    public function editAction()
     {
         return new ViewModel();
     }
 
-    public function disposisiAction()
-    {
-        return new ViewModel();
-    }
-    
 
 }

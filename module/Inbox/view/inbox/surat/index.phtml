@@ -1,0 +1,230 @@
+                        <style>
+                            #the-canvas {
+                            border: 1px solid black;
+                            direction: ltr;
+                            }
+                        </style>
+
+                        <div class="row" >
+
+                            <div class="col-12" id="panel-table-surat-masuk">
+                                <div id="panel-1" class="panel">
+                                    <div class="panel-hdr">
+                                        <h2>
+                                            Surat <span class="fw-300"><i>Masuk</i></span>
+                                        </h2>
+                                        <div class="panel-toolbar">
+
+                                            <button class="btn btn-icon" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"><i class="fal fa-expand"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="panel-container show">
+                                        <div class="panel-content">
+                                            <!-- datatable start -->
+                                            <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100 display responsive ">
+                                                <thead class="d-none">
+                                                    <tr class="sticky-top">
+                                                        <th>Surat</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                                <tfoot class="d-none">
+                                                    <tr>
+                                                        <th>Surat</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                            <!-- datatable end -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12" id="panel-detil">
+                                <div id="panel-1" class="panel ">
+                                    <div class="panel-hdr">
+                                        <h2>
+                                            Surat <span class="fw-300"><i>Masuk</i></span>
+                                        </h2>
+                                        <div class="panel-toolbar">
+                                            <button class="btn btn-icon" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"><i class="fal fa-expand"></i></button>
+                                            <button id="btn-panel-detil-close" class="btn btn-icon" data-toggle="tooltip" data-offset="0,10" data-original-title="Close"><i class="fal fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="panel-container show ">
+                                        <div class="panel-content">
+                                            <!-- preview start -->
+
+                                            <div class="row mb-6 mr-3">
+                                                <div class="col-12 ">
+                                                        <div class="frame-wrap position-absolute pos-top pos-right d-none d-sm-block">
+                                                            <nav aria-label="..."" class="">
+                                                                <ul class="pagination  ">
+                                                                    <li class="page-item ">
+                                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                                            <span aria-hidden="true"><i class="fal fa-chevron-left"></i></span>
+                                                                        </a>
+                                                                    </li>
+                                                                    
+                                                                    <li class="page-item active" aria-current="page">
+                                                                        <span class="page-link">
+                                                                            256
+                                                                            <span class="sr-only">(current)</span>
+                                                                        </span>
+                                                                    </li>
+                                                                    <li class="page-item disabled"><a class="page-link" href="#">of... 300</a></li>
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                            <span aria-hidden="true"><i class="fal fa-chevron-right"></i></span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
+                                                        </div>    
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div id="msg-03" class="d-flex flex-column border-faded border-top-0 border-left-0 border-right-0 py-3 px-3 px-sm-4 px-lg-0 mr-0 mr-lg-5 flex-shrink-0">
+                                                        <div class="d-flex align-items-center flex-row">
+                                                            
+                                                            <div class="fw-500 flex-1 d-flex flex-column cursor-pointer" >
+                                                                <div class="fs-md">
+                                                                    <table >
+                                                                        <tr>
+                                                                            <td width="10%">Dari</td>
+                                                                            <td>: Dirjen IDP</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Nomor</td>
+                                                                            <td>: 24535/4454/SM/303/22</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td valign="top">Perihal</td>
+                                                                            <td>: We've taken customer feedback on board and are pleased to announce that the the industry's most recommended and secure option for Two-Factor Authentication (2FA) is now available to use on our site.
+                                                                So, if you've tried our previous 2FA methods and have not been convinced, why not try our new Time-Based One-Time Password (TOTP)? It's super easy to use, and it works with many third-party 2FA apps you might already have on your phone. We're positive you'll love the new improved experience.
+                                                                            </td>
+                                                                        </tr>
+
+                                                                    </table>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            <div class="color-fusion-200 fs-sm position-absolute pos-top pos-right mr-4">
+                                                                6:00 AM <span class="hidden-sm-down">(5 hours ago)</span>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="slimscroll" class="custom-scroll" style="height:800px" 
+                                                data-scrollHeight="800" 
+                                                data-scrollSize="4px" 
+                                                data-scrollPosition="right" 
+                                                data-scrollColor="rgba(0,0,0,0.6)" 
+                                                data-alwaysVisible="false" 
+                                                data-distance="4px" 
+                                                data-railVisible="false" 
+                                                data-railColor="#fafafa" >
+                                                <div class="p-3">
+                                                        
+                                                    <embed src="/pdf/design-pattern.pdf" width="100%" height="100%"/>
+                                                </div>
+                                            </div>
+                                            <!-- preview end -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <?php
+
+                        //https://quote-garden.herokuapp.com/quotes/search/life datasource contoh
+
+                        $this->inlineScript()->captureStart();
+                        echo <<<JS
+$(document).ready(function()
+    {
+    console.log("CEKCUK");
+    $("#panel-detil").hide();
+    // initialize datatable
+
+    $("#btn-panel-detil-close").click(function(){
+        $("#panel-table-surat-masuk").show()
+        $("#panel-detil").hide();
+    })
+
+    var dt_basic_example = $('#dt-basic-example').DataTable(
+    {
+    ajax: {
+    "url": "https://quote-garden.herokuapp.com/quotes/search/life",
+    "dataSrc": "results"
+    },
+    columns: [
+    //{ data: "quoteAuthor" , responsivePriority: 500 },
+    { data: "quoteText" , responsivePriority: 1 },
+    //{ data: "_id",responsivePriority: 1000 }
+    ],
+
+    scrollY: 600,
+    scrollCollapse: true,
+
+    scroller: {
+    loadingIndicator: true
+    },
+    processing: true,
+
+
+    responsive:
+    {
+    details:
+    {
+    display: $.fn.dataTable.Responsive.display.modal(
+    {
+        header: function(row)
+        {
+            var data = row.data();
+            return 'Details for ' + data[0] + ' ' + data[1];
+        }
+    }),
+    renderer: $.fn.dataTable.Responsive.renderer.tableAll(
+    {
+        tableClass: 'table table-responsive'
+    })
+    }
+    },
+    "columnDefs": [
+            {
+                // The `data` parameter refers to the data for the cell (defined by the
+                // `data` option, which defaults to the column being worked with, in
+                // this case `data: 0`.
+                "render": function ( data, type, row ) {
+                    let displaydata = '<span class="font-weight-bold fs-xl">'+row["quoteAuthor"] + '</span><p>' + data +'</p>';
+                    return displaydata;
+                },
+                "targets": 0
+            }
+        ]
+    }); //end datatable
+
+    $('#dt-basic-example tbody').on('click', 'tr', function () {
+        var data = dt_basic_example.row( this ).data();
+        $("#panel-detil").show();
+        $("#panel-table-surat-masuk").hide()
+    } );
+
+    }); //end on ready
+JS;
+                        $this->inlineScript()->captureEnd();
+
+                        ?>

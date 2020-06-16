@@ -1,0 +1,152 @@
+                        
+                        <div class="row">
+
+<div class="col-xl-6 col-xs-12">
+    <div id="panel-1" class="panel">
+        <div class="panel-hdr">
+            <h2>
+                Disposisi <span class="fw-300"><i>Masuk</i></span>
+            </h2>
+            <div class="panel-toolbar">
+                
+                <button class="btn btn-icon" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"><i class="fal fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="panel-container show">
+            <div class="panel-content">
+                <!-- datatable start -->
+                <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100 display responsive ">
+                    <thead class="d-none">
+                        <tr class="sticky-top">
+                            <th>Surat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tfoot class="d-none">
+                        <tr>
+                        <th>Surat</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <!-- datatable end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xl-6 col-xs-12">
+    <div id="panel-1" class="panel ">
+        <div class="panel-hdr">
+            <h2>
+                Detil Disposisi <span class="fw-300"><i>Masuk</i></span>
+            </h2>
+            <div class="panel-toolbar">
+                <button class="btn btn-icon" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"><i class="fal fa-expand"></i></button>
+                <button class="btn btn-icon" data-action="panel-close" data-toggle="tooltip" data-offset="0,10" data-original-title="Close"><i class="fal fa-times"></i></button>
+            </div>
+        </div>
+        <div class="panel-container show">
+            <div class="panel-content custom-scroll"
+            style="height:600px" 
+            data-scrollHeight="600" 
+            data-scrollSize="4px" 
+            data-scrollPosition="right" 
+            data-scrollColor="rgba(0,0,0,0.6)" 
+            data-alwaysVisible="false" 
+            data-distance="4px" 
+            data-railVisible="false" 
+            data-railColor="#fafafa">
+                <!-- preview start -->
+                <div>
+                <embed src="/pdf/design-pattern.pdf#toolbar=0" width="100%" height="100%"></embed>
+                </div>
+                <div class=" text-center">
+                    <p>
+                        <span style="color:aqua;" class=" text-center" >
+                            <i class="fal fa-envelope fa-9x"></i>
+                        </span>
+                    </p>
+                    <p><span>Select item to preview</span></p>
+                    
+                </div>
+                
+                <!-- preview end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<?php 
+
+//https://quote-garden.herokuapp.com/quotes/search/life datasource contoh
+
+$this->inlineScript()->captureStart();
+echo <<<JS
+$(document).ready(function()
+{
+console.log("CEKCUK");
+// initialize datatable
+$('#dt-basic-example').dataTable(
+{
+ajax: {
+"url": "https://quote-garden.herokuapp.com/quotes/search/life",
+"dataSrc": "results"
+},
+columns: [
+
+//{ data: "quoteAuthor" , responsivePriority: 500 },
+{ data: "quoteText" , responsivePriority: 1 },
+//{ data: "_id",responsivePriority: 1000 }
+],
+
+scrollY: 600,
+scrollCollapse: true,
+
+scroller: {
+loadingIndicator: true
+},
+processing: true,
+
+
+responsive:
+{
+details:
+{
+display: $.fn.dataTable.Responsive.display.modal(
+{
+    header: function(row)
+    {
+        var data = row.data();
+        return 'Details for ' + data[0] + ' ' + data[1];
+    }
+}),
+renderer: $.fn.dataTable.Responsive.renderer.tableAll(
+{
+    tableClass: 'table table-responsive'
+})
+}
+},
+"columnDefs": [
+        {
+            // The `data` parameter refers to the data for the cell (defined by the
+            // `data` option, which defaults to the column being worked with, in
+            // this case `data: 0`.
+            "render": function ( data, type, row ) {
+                let displaydata = '<span class="font-weight-bold fs-xl">'+row["quoteAuthor"] + '</span><p>' + data +'</p>';
+                return displaydata;
+            },
+            "targets": 0
+        }
+    ]
+});
+});
+JS;
+$this->inlineScript()->captureEnd();
+
+?>

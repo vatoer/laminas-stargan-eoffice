@@ -30,4 +30,5 @@ return [
     'Laminas\Validator',
     'Application',
     'ModuleName',
+    'Inbox',
 ];

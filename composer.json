@@ -20,7 +20,8 @@
         "laminas/laminas-mvc-i18n": "^1.1.1",
         "laminas/laminas-mvc-plugins": "^1.0.1",
         "laminas/laminas-session": "^2.9.1",
-        "laminas/laminas-di": "^3.1.1"
+        "laminas/laminas-di": "^3.1.1",
+        "san/san-session-toolbar": "^3.1"
     },
     "autoload": {
         "psr-4": {
@@ -46,5 +47,8 @@
         ],
         "serve": "php -S 0.0.0.0:8080 -t public",
         "test": "phpunit"
+    },
+    "require-dev": {
+        "laminas/laminas-developer-tools": "^2.0"
     }
 }
